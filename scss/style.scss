@@ -1,0 +1,187 @@
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jua&display=swap");
+// font-family: 'Jua', sans-serif;
+
+//RESET
+@import "reset";
+
+//VARIABLE
+$font-color: #181818;
+
+//COMMON
+body {
+  background-color: rgb(206, 135, 42);
+}
+
+header {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  padding: 4vh 5vw;
+
+  h1 {
+    a {
+      color: $font-color;
+      font-size: 50px;
+      font-family: "Bungee Shade", cursive;
+    }
+  }
+
+  #gnb {
+    display: flex;
+    li {
+      margin: 0px 20px;
+
+      a {
+        font: 16px/1 "Jua";
+        color: $font-color;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .sns {
+    display: flex;
+    li {
+      margin: 0px 10px;
+      a {
+        font-size: 20px;
+        color: $font-color;
+      }
+    }
+  }
+
+  .btn_menu {
+    display: none;
+  }
+}
+
+//VIEDEO
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .text {
+    position: absolute;
+    left: 16vw;
+    top: 50%;
+    transform: translateY(-50%);
+    .team-name {
+      font-family: "Bungee Shade", cursive;
+    }
+    p {
+      font: normal 8vw/1 "Jua";
+      color: $font-color;
+      text-align: center;
+    }
+
+    ul {
+      display: flex;
+      margin-top: 50px;
+      justify-content: center;
+      li {
+        margin: 0px 30px;
+
+        i {
+          font-size: 20px;
+          color: $font-color;
+          margin-right: 10px;
+        }
+
+        strong {
+          font: 20px/1 "Jua";
+          color: $font-color;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  left: 3vw;
+  bottom: 0;
+
+  font: 13px/1 "Jua";
+  color: $font-color;
+  letter-spacing: 1px;
+  padding: 2vh 0;
+}
+#snb {
+  display: none;
+}
+//반응형
+@media screen and (max-width: 968px) {
+  header {
+    #snb {
+      display: block;
+      .sub-menu {
+        position: absolute;
+        right: 5vw;
+        padding: 10px 15px;
+        border: 3px solid #c79111;
+        border-radius: 10px;
+        text-align: center;
+        background-color: inherit;
+        transition: 0.4s;
+
+        li {
+          padding: 10px 0px;
+
+          font: 16px/1 "Jua";
+
+          a {
+            color: $font-color;
+            background-color: #c79111;
+            border-radius: 5px;
+
+            i {
+              text-align: center;
+            }
+          }
+        }
+        &.hide {
+          opacity: 0;
+        }
+      }
+    }
+    #gnb {
+      display: none;
+    }
+    .sns {
+      display: none;
+    }
+
+    .btn_menu {
+      display: block;
+      font-size: 4vw;
+      color: $font-color;
+    }
+  }
+
+  figure {
+    .text {
+      p {
+        font-size: 20vw;
+      }
+    }
+  }
+}
